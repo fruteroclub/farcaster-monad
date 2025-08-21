@@ -4,6 +4,11 @@ import { APP_URL } from "../../../lib/constants";
 export async function GET() {
   const farcasterConfig = {
     // TODO: Add your own account association
+    accountAssociation: {
+    header: process.env.FARCASTER_AA_HEADER || "",
+    payload: process.env.FARCASTER_AA_PAYLOAD || "",
+    signature: process.env.FARCASTER_AA_SIGNATURE || "",
+    },
     frame: {
       version: "1",
       name: "Monad Farcaster MiniApp Template",
