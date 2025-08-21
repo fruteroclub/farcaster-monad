@@ -1,29 +1,179 @@
+/* ======================================== */
+/* --- Design System Foundation --- */
+/* ======================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Color Palette - Semantic Naming */
+  --background-primary: #111111;    /* Main background */
+  --background-secondary: #1a1a1a;  /* Cards and surfaces */
+  --foreground-primary: #f0f0f0;    /* Main text */
+  --foreground-secondary: #a0a0a0;  /* Secondary text, subtitles */
+  
+  /* Accent Colors */
+  --accent-primary: #8a63d2;       /* Main accent (Farcaster/Monad) */
+  --accent-primary-hover: #7856c0;  /* Hover state */
+  --accent-secondary: #635bff;     /* Brighter accent for gradients */
+  
+  /* UI Elements */
+  --border-primary: #333333;       /* Card borders, dividers */
+  --border-hover: #444444;         /* Hover state for interactive elements */
+  
+  /* Feedback Colors */
+  --success: #10b981;              /* Success messages */
+  --error: #ef4444;                /* Error messages */
+  --warning: #f59e0b;             /* Warning messages */
+  --info: #3b82f6;                /* Informational messages */
+  
+  /* Layout Tokens */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Base Styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-primary);
+  color: var(--foreground-primary);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(138, 99, 210, 0.3); /* accent-primary with 30% opacity */
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(138, 99, 210, 0.5); /* accent-primary with 50% opacity */
+}
+
+/* Custom Styles for Dad Jokes App */
+.user-wallet-card {
+  background: #2a2a2e;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #8a63d2;
+  object-fit: cover;
+}
+
+.username {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.wallet-info {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.wallet-address {
+  background-color: #111;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  word-break: break-all;
+  font-size: 14px;
+  color: #8a63d2;
+}
+
+.action-button-primary {
+  background-color: #8a63d2;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.action-button-primary:hover {
+  background-color: #7a53c2;
+}
+
+.main-joke-card {
+  text-align: center;
+  background: #2a2a2e;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.joke-text {
+  font-size: 20px;
+  font-style: italic;
+  color: #f0f0f0;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #8a63d2;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.6;
+}
+
+.action-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.action-button-secondary {
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-button-secondary:hover {
+  background-color: #444;
+  border-color: #8a63d2;
 }
 
 @layer utilities {
