@@ -9,9 +9,22 @@ import toast from 'react-hot-toast'
 export function UserWallet() {
   const { context } = useFrame()
   const { isConnected, address, isConnecting, isDisconnected } = useAccount()
-  const { connect, error: connectError } = useConnect({
-    connector: farcasterMiniApp(),
-  })
+  const { connect, error: connectError } = useConnect()
+  
+  const handleConnect = () => {
+    connect(
+      { connector: farcasterMiniApp() },
+      {
+        onError: (error: Error) => {
+          console.error('Connection error:', error)
+          toast.error(`Connection failed: ${error.message}`)
+        },
+        onSuccess: () => {
+          toast.success('Wallet connected successfully')
+        }
+      }
+    )
+  }
   const { disconnect } = useDisconnect()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -37,17 +50,8 @@ export function UserWallet() {
 
     setIsLoading(true)
     console.log('Attempting to connect wallet...')
-    
-    try {
-      await connect(undefined, { throwForError: true })
-      console.log('Wallet connection successful')
-      toast.success('¡Billetera conectada con éxito!')
-    } catch (error) {
-      console.error('Failed to connect wallet:', error)
-      toast.error('Failed to connect wallet. Please try again.')
-    } finally {
-      setIsLoading(false)
-    }
+    handleConnect()
+    setIsLoading(false)
   }
 
   if (!context?.user) {
