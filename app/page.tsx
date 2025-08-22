@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 const frame = {
   version: 'next',
-  imageUrl: `${APP_URL}/images/feed.jpg`,
+  imageUrl: `${APP_URL}/images/feed.png`,
   button: {
     title: 'Test me',
     action: {
@@ -12,7 +12,7 @@ const frame = {
       name: 'gMonad',
       url: APP_URL,
       splashImageUrl: `${APP_URL}/images/splash.png`,
-      splashBackgroundColor: '#f7f7f7',
+      splashBackgroundColor: '#2F0372',
     },
   },
 }
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: 'gMonad',
     openGraph: {
       title: 'gMonad',
-      description: 'Proof Monad',
+      description: 'A miniapp for Monad',
     },
     other: {
       'fc:frame': JSON.stringify(frame),
