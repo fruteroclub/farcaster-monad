@@ -19,11 +19,10 @@ function Card({
   children: React.ReactNode
 }) {
   return (
-    <section className="border border-zinc-800 rounded-xl p-4 bg-zinc-900/40">
+    <section className="border border-zinc-800 rounded-xl p-4 bg-zinc-900">
       <h3 className="text-lg font-semibold mb-1">{title}</h3>
       {(subtitleEs || subtitleEn) && (
-        <div className="mb-3 leading-snug">
-          {/* Inglés primero */}
+        <div className="mb-3 leading-snug">          
           {subtitleEn && <p className="text-zinc-200">{subtitleEn}</p>}
           {subtitleEs && <p className="text-zinc-400 text-sm italic">{subtitleEs}</p>}
         </div>
@@ -39,8 +38,7 @@ export function Demo() {
       <main className="mx-auto max-w-2xl p-4 space-y-6">
         {/* Hero */}
         <header className="text-center space-y-2">
-          <h1 className="text-3xl font-bold">Monad Farcaster MiniApp Template</h1>
-          {/* Inglés primero */}
+          <h1 className="text-3xl font-bold">Monad Farcaster MiniApp Template</h1>          
           <p className="font-medium">
             Explore native actions, share a cast, and try wallet on testnet.
           </p>

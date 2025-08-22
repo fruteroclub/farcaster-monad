@@ -7,18 +7,14 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Monad Farcaster MiniApp Template',
+  title: 'gMonad',
   description: 'A template for building mini-apps on Farcaster and Monad',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-black text-white`}>
         <Providers>{children}</Providers>
       </body>
     </html>
