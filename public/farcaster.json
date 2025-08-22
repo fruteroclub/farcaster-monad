@@ -1,0 +1,18 @@
+{
+  "name": "Dad Jokes by RogersX",
+  "iconUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/images/icon.png",
+  "subtitle": "Laugh, Share, and Collect Jokes on Farcaster",
+  "description": "Discover and share the funniest dad jokes on the Farcaster network. Collect rare joke NFTs, tip your favorite jokesters, and build your comedy collection. Powered by Monad for fast, low-cost transactions.",
+  "primaryCategory": "entertainment",
+  "imageUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/images/dad.jpg",
+  "splashImageUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/images/splash.png",
+  "splashBackgroundColor": "#8a63d2",
+  "tags": [ "comedy", "nft", "collectibles", "social", "humor", "web3" ],
+  "buttonTitle": "Get Joking",
+  "ogTitle": "Dad Jokes by RogersX - Collect & Share Laughs on Farcaster",
+  "ogDescription": "Collect, share, and trade joke NFTs while connecting with the funniest community on Farcaster.",
+  "ogImageUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/images/feed.png",
+  "castShareUrl": "https://warpcast.com/~/compose?text=Just+collected+a+hilarious+dad+joke+on+%40DadJokesApp+%F0%9F%98%82+Check+it+out%21&embeds[]=https://farcaster-monad-rogers-x-kiya.vercel.app/",
+  "homeUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/",
+  "webhookUrl": "https://farcaster-monad-rogers-x-kiya.vercel.app/api/webhook"
+}
