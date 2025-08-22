@@ -4,12 +4,12 @@ import type { Metadata } from 'next'
 
 const frame = {
   version: 'next',
-  imageUrl: `${APP_URL}/images/dad.jpg`,
+  imageUrl: `${APP_URL}/images/feed.jpg`,
   button: {
-    title: 'Dad Jokes',
+    title: 'Test me',
     action: {
       type: 'launch_frame',
-      name: 'Monad Dad Jokes App',
+      name: 'gMonad',
       url: APP_URL,
       splashImageUrl: `${APP_URL}/images/splash.png`,
       splashBackgroundColor: '#f7f7f7',
@@ -19,10 +19,10 @@ const frame = {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Dad Jokes',
+    title: 'gMonad',
     openGraph: {
-      title: 'Dad Jokes',
-      description: 'A dad joke app',
+      title: 'gMonad',
+      description: 'Proof Monad',
     },
     other: {
       'fc:frame': JSON.stringify(frame),
