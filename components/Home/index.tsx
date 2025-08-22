@@ -7,7 +7,6 @@ import { NotificationActions } from './NotificationActions'
 import CustomOGImageAction from './CustomOGImageAction'
 import { Haptics } from './Haptics'
 
-
 function Card({
   title,
   subtitleEs,
@@ -24,8 +23,9 @@ function Card({
       <h3 className="text-lg font-semibold mb-1">{title}</h3>
       {(subtitleEs || subtitleEn) && (
         <div className="mb-3 leading-snug">
-          {subtitleEs && <p className="text-zinc-200">{subtitleEs}</p>}
-          {subtitleEn && <p className="text-zinc-400 text-sm italic">{subtitleEn}</p>}
+          {/* Inglés primero */}
+          {subtitleEn && <p className="text-zinc-200">{subtitleEn}</p>}
+          {subtitleEs && <p className="text-zinc-400 text-sm italic">{subtitleEs}</p>}
         </div>
       )}
       {children}
@@ -40,46 +40,47 @@ export function Demo() {
         {/* Hero */}
         <header className="text-center space-y-2">
           <h1 className="text-3xl font-bold">Monad Farcaster MiniApp Template</h1>
+          {/* Inglés primero */}
           <p className="font-medium">
-            Explora acciones nativas, comparte un cast y prueba wallet en testnet.
+            Explore native actions, share a cast, and try wallet on testnet.
           </p>
           <p className="text-zinc-400 text-sm">
-            Explore native actions, share a cast, and try wallet on testnet.
+            Explora acciones nativas, comparte un cast y haz pruebas en testnet.
           </p>
         </header>
 
         {/* Perfil */}
         <Card
-          title="Tu perfil · Your profile"
-          subtitleEs="Esta es tu identidad en Farcaster."
+          title="Your profile"
           subtitleEn="This is your Farcaster identity."
+          subtitleEs="Esta es tu identidad en Farcaster."
         >
           <User />
         </Card>
 
         {/* Acciones Farcaster */}
         <Card
-          title="Acciones Farcaster · Farcaster actions"
-          subtitleEs="Crea un cast prellenado y abre perfiles sin salir de la Mini App."
+          title="Farcaster actions"
           subtitleEn="Create a prefilled cast and view profiles without leaving the app."
+          subtitleEs="Crea un cast rellenado y abre perfiles sin salir de la Mini App."
         >
           <FarcasterActions />
         </Card>
 
         {/* Añadir/Notificaciones */}
         <Card
-          title="Notificaciones · Notifications"
-          subtitleEs="Agrega la app y habilita notificaciones para recibir avisos."
+          title="Notifications"
           subtitleEn="Add the app and enable notifications to receive updates."
+          subtitleEs="Agrega la app y habilita notificaciones para recibir avisos."
         >
           <NotificationActions />
         </Card>
 
         {/* Wallet (Monad Testnet) */}
         <Card
-          title="Wallet (Monad Testnet)"
-          subtitleEs="Antes de enviar colocamos la red de Monad."
+          title="Wallet"
           subtitleEn="We switch to Monad testnet before sending."
+          subtitleEs="Probando transacciones en la red de Monad."
         >
           <WalletActions />
         </Card>
@@ -87,17 +88,17 @@ export function Demo() {
         {/* Haptics */}
         <Card
           title="Haptics"
-          subtitleEs="Vibraciones y feedback táctil (si tu cliente lo soporta)."
           subtitleEn="Haptic feedback, when supported by the client."
+          subtitleEs="Vibraciones y feedback táctil (si tu cliente lo soporta)."
         >
           <Haptics />
         </Card>
 
         {/* OG Image */}
         <Card
-          title="Imagen OG · OG Image"
-          subtitleEs="Genera una imagen para compartir y probar metadatos sociales."
+          title="OG Image"
           subtitleEn="Generate a shareable image to test social metadata."
+          subtitleEs="Genera una imagen para compartir y probar metadatos sociales."
         >
           <CustomOGImageAction />
         </Card>
@@ -105,4 +106,3 @@ export function Demo() {
     </div>
   )
 }
-

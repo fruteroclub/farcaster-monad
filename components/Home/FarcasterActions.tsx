@@ -23,7 +23,7 @@ export function FarcasterActions() {
               className="bg-white text-black rounded-md p-2 text-sm"
               onClick={() => actions?.close()}
             >
-              close
+              Close
             </button>
             <button
               type="button"
@@ -35,7 +35,7 @@ export function FarcasterActions() {
                 })
               }
             >
-              Share this Joke
+              Share with your friends
             </button>
             {/* <button
               type="button"

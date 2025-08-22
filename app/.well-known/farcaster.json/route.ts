@@ -20,7 +20,7 @@ export async function GET() {
       primaryCategory: "developer-tools",
       buttonTitle: "Launch Template",
       splashImageUrl: `${APP_URL}/images/splash.png`,
-      splashBackgroundColor: "#ffffff",
+      splashBackgroundColor: "#2F0372",
       webhookUrl: `${APP_URL}/api/webhook`,
     },
   };

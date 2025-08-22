@@ -6,7 +6,7 @@ const frame = {
   version: 'next',
   imageUrl: `${APP_URL}/images/feed.png`,
   button: {
-    title: 'Test me',
+    title: 'Test Me',
     action: {
       type: 'launch_frame',
       name: 'gMonad',
