@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useFrame } from '@/components/farcaster-provider'
 import { APP_URL } from '@/lib/constants'
+import { MintJokeButton } from './MintJokeButton'
 
 // Array of dad jokes to display
 const DAD_JOKES = [
@@ -79,24 +80,28 @@ export function JokeActions() {
           <span>Nuevo Chiste</span>
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <button
-            onClick={handleShareJoke}
-            disabled={!currentJoke || isLoading}
-            className="px-4 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors disabled:opacity-50 flex items-center justify-center space-x-2"
-          >
-            <span>📢</span>
-            <span>Compartir Chiste</span>
-          </button>
+        <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <button
+              onClick={handleShareJoke}
+              disabled={!currentJoke || isLoading}
+              className="px-4 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors disabled:opacity-50 flex items-center justify-center space-x-2"
+            >
+              <span>📢</span>
+              <span>Compartir Chiste</span>
+            </button>
 
-          <button
-            onClick={handleGenerateImage}
-            disabled={!currentJoke || isLoading}
-            className="px-4 py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-600 transition-colors disabled:opacity-50 flex items-center justify-center space-x-2"
-          >
-            <span>🖼️</span>
-            <span>Generar Imagen</span>
-          </button>
+            <button
+              onClick={handleGenerateImage}
+              disabled={!currentJoke || isLoading}
+              className="px-4 py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-600 transition-colors disabled:opacity-50 flex items-center justify-center space-x-2"
+            >
+              <span>🖼️</span>
+              <span>Generar Imagen</span>
+            </button>
+          </div>
+          
+          <MintJokeButton joke={currentJoke} />
         </div>
       </div>
     </div>

@@ -1,52 +1,81 @@
-# Monad Farcaster MiniApp Template
+# RogersX - Miniapp de Chistes NFT
 
-The template demonstrates all Mini App capabilities and lets you easily modify it, so you can build Mini Apps.
+Una aplicación MiniApp de Farcaster que permite a los usuarios crear, compartir y mintear chistes como NFTs en la blockchain.
 
-## Cloning the Template
+## 🚀 Características
 
-You can the following command to clone the Mini App template to your local machine:
+- Generación de chistes aleatorios
+- Compartir chistes en Farcaster
+- Mintear chistes como NFTs
+- Interfaz intuitiva y responsiva
+- Integración con billeteras Web3
+
+## 🛠️ Requisitos Previos
+
+- Node.js 18+
+- pnpm 8.x
+- Una billetera Web3 (como MetaMask)
+- Claves de API de Farcaster
+
+## 🚀 Instalación
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/rogersx-miniapp.git
+   cd rogersx-miniapp
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   pnpm install
+   ```
+
+3. **Configurar variables de entorno**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Luego, edita el archivo `.env.local` con tus credenciales.
+
+4. **Iniciar el servidor de desarrollo**
+   ```bash
+   pnpm dev
+   ```
+
+## 🔧 Configuración
+
+### Variables de Entorno
+
+Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
 
 ```
-git clone https://github.com/monad-developers/monad-miniapp-template.git
+NEXT_PUBLIC_URL=http://localhost:3000
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x13ad7149af8564b7730e45b7e0a7a9e9132bb463
+# Otras variables necesarias
 ```
 
-### Install the dependencies
+### Redes Soportadas
 
-```
-yarn
-```
+- Sepolia Testnet
+- Optimism Mainnet
+- Base Mainnet
 
-### Copy `.env.example` over to `.env.local`
+## 🤝 Contribución
 
-```bash
-cp .env.example .env.local
-```
+1. Haz un fork del proyecto
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Haz push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-### Run the template
+## 📄 Licencia
 
-```bash
-yarn run dev
-```
+Distribuido bajo la licencia MIT. Ver `LICENSE` para más información.
 
-### View the App in Warpcast Embed tool
+## 📧 Contacto
 
-Warpcast has a neat [Embed tool](https://warpcast.com/~/developers/mini-apps/embed) that you can use to inspect the Mini App before you publish it.
+Tu Nombre - [@tuusuario](https://warpcast.com/tuusuario)
 
-Unfortunately, the embed tool can only work with remote URL. Inputting a localhost URL does not work.
-
-As a workaround, you may make the local app accessible remotely using a tool like `cloudflared` or `ngrok`. In this guide we will use `cloudflared`.
-
-#### Install Cloudflared
-
-```bash
-brew install cloudflared
-```
-
-For more installation options see the [official docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/).
-
-#### Expose localhost
-
-Run the following command in your terminal:
+Enlace del Proyecto: [https://github.com/tu-usuario/rogersx-miniapp](https://github.com/tu-usuario/rogersx-miniapp)
 
 ```bash
 cloudflared tunnel --url http://localhost:3000
