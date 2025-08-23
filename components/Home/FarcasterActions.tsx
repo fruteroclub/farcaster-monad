@@ -1,65 +1,69 @@
+'use client'
+
 import { useFrame } from '@/components/farcaster-provider'
 import { APP_URL } from '@/lib/constants'
-import { useMutation } from '@tanstack/react-query'
 
 export function FarcasterActions() {
   const { actions } = useFrame()
 
+  
+  const HOME_URL = (APP_URL || '').replace(/\/$/, '')
+
   return (
     <div className="space-y-4 border border-[#333] rounded-md p-4">
       <h2 className="text-xl font-bold text-left">sdk.actions</h2>
+
       <div className="flex flex-row space-x-4 justify-start items-start">
         {actions ? (
-          <div className="flex flex-col space-y-4 justify-start">
+          <div className="flex flex-col space-y-3 justify-start w-full">
             <button
               type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
-              onClick={() => actions?.addMiniApp()}
+              className="bg-white text-black rounded-md p-2 text-sm w-full sm:w-auto hover:opacity-90 transition"
+              onClick={() => actions?.addMiniApp?.() ?? actions?.addFrame?.()}
             >
               Add this app to your home screen
             </button>
+
             <button
               type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
-              onClick={() => actions?.close()}
+              className="bg-white text-black rounded-md p-2 text-sm w-full sm:w-auto hover:opacity-90 transition"
+              onClick={() => actions?.close?.()}
             >
               Close
             </button>
+
             <button
               type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
+              className="bg-white text-black rounded-md p-2 text-sm w-full sm:w-auto hover:opacity-90 transition"
               onClick={() =>
-                actions?.composeCast({
-                  text: 'Check out this Monad Farcaster MiniApp Template!',// todo: add joke here
-                  embeds: [`${APP_URL}/images/dad.jpg`],
+                actions?.composeCast?.({
+                  text: 'Check out this Monad Farcaster MiniApp Template!',                  
+                  embeds: [HOME_URL],
                 })
               }
             >
               Share with your friends
             </button>
-            {/* <button
+
+            
+            {/* 
+            <button
               type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
-              onClick={() => actions?.openUrl('https://docs.monad.xyz')}
+              className="bg-white text-black rounded-md p-2 text-sm w-full sm:w-auto hover:opacity-90 transition"
+              onClick={() => actions?.openUrl?.('https://docs.monad.xyz')}
             >
               openUrl
-            </button> */}
-            {/* <button
+            </button>
+            */}
+            {/*
+            <button
               type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
-              onClick={() =>
-                actions?.signIn({ nonce: '1201', acceptAuthAddress: true })
-              }
-            >
-              signIn
-            </button> */}
-            {/* <button
-              type="button"
-              className="bg-white text-black rounded-md p-2 text-sm"
-              onClick={() => actions?.viewProfile({ fid: 17979 })}
+              className="bg-white text-black rounded-md p-2 text-sm w-full sm:w-auto hover:opacity-90 transition"
+              onClick={() => actions?.viewProfile?.({ fid: 17979 })}
             >
               viewProfile
-            </button> */}
+            </button>
+            */}
           </div>
         ) : (
           <p className="text-sm text-left">Actions not available</p>

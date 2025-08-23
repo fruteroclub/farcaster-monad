@@ -23,6 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'gMonad',
       description: 'A miniapp for Monad',
+      url: APP_URL,
+      images: [`${APP_URL}/images/og.png`], // 
     },
     other: {
       'fc:frame': JSON.stringify(frame),
